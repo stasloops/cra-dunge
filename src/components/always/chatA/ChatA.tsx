@@ -21,40 +21,40 @@ const ChatA: FC<ChatProps> = ({ visibleChat, setVisibleChat }) => {
     const [connected, setConnected] = useState(false);
     const [username, setUsername] = useState('')
     
-    function connect() {
-        socket.current = new WebSocket('ws://localhost:5000');
+    // function connect() {
+    //     socket.current = new WebSocket('ws://localhost:5000');
 
-        socket.current.onopen = () => {
-            setConnected(true)
-            const message = {
-                event: 'connection',
-                username,
-                id: Date.now()
-            }
-            socket.current.send(JSON.stringify(message))
-        }
-        socket.current.onmessage = (event:any) => {
-            const message = JSON.parse(event.data)
-            setMessages(prev => [message, ...prev])
-        }
-        socket.current.onclose = () => {
-            console.log('Socket закрыт')
-        }
-        socket.current.onerror = () => {
-            console.log('Socket произошла ошибка')
-        }
-    }
+    //     socket.current.onopen = () => {
+    //         setConnected(true)
+    //         const message = {
+    //             event: 'connection',
+    //             username,
+    //             id: Date.now()
+    //         }
+    //         socket.current.send(JSON.stringify(message))
+    //     }
+    //     socket.current.onmessage = (event:any) => {
+    //         const message = JSON.parse(event.data)
+    //         setMessages(prev => [message, ...prev])
+    //     }
+    //     socket.current.onclose = () => {
+    //         console.log('Socket закрыт')
+    //     }
+    //     socket.current.onerror = () => {
+    //         console.log('Socket произошла ошибка')
+    //     }
+    // }
 
-    const sendMessage = async () => {
-        const message = {
-            username,
-            message: value,
-            id: Date.now(),
-            event: 'message'
-        }
-        socket.current.send(JSON.stringify(message));
-        setValue('')
-    }
+    // const sendMessage = async () => {
+    //     const message = {
+    //         username,
+    //         message: value,
+    //         id: Date.now(),
+    //         event: 'message'
+    //     }
+    //     socket.current.send(JSON.stringify(message));
+    //     setValue('')
+    // }
 
     if (!connected) {
         return (
@@ -65,7 +65,7 @@ const ChatA: FC<ChatProps> = ({ visibleChat, setVisibleChat }) => {
                         onChange={e => setUsername(e.target.value)}
                         type="text"
                         placeholder="Введите ваше имя" />
-                    <button onClick={connect}>Войти</button>
+                    {/* <button onClick={connect}>Войти</button> */}
                 </div>
             </div>
         )
@@ -75,7 +75,7 @@ const ChatA: FC<ChatProps> = ({ visibleChat, setVisibleChat }) => {
 
     return (
         <div className="center">
-            <div>
+            {/* <div>
                 <div className="form">
                     <input value={value} onChange={e => setValue(e.target.value)} type="text" />
                     <button onClick={sendMessage}>Отправить</button>
@@ -94,7 +94,7 @@ const ChatA: FC<ChatProps> = ({ visibleChat, setVisibleChat }) => {
                         </div>
                     )}
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

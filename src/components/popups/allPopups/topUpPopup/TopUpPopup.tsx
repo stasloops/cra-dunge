@@ -55,7 +55,7 @@ const TopUpPopup = () => {
         }
     }
 
-    const paymentData = localStorage.getItem('payment')
+    const paymentData:any = localStorage.getItem('payment')
     const payment = JSON.parse(paymentData)
 
     return (

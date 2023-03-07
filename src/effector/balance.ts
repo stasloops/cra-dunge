@@ -1,29 +1,30 @@
-import { createEffect } from 'effector';
-import { createStore, sample } from 'effector';
-import { createEvent } from 'effector';
- 
-export const clientBet = createEvent<number>()
-export const clientReward = createEvent<number>()
-export const updateBalance = createEvent<number>()
+import { createEffect } from "effector";
+import { createStore, sample } from "effector";
+import { createEvent } from "effector";
 
-const user = JSON.parse(localStorage.getItem('user')) || 0
-export const $balance = createStore<number>(user.balance || 0)
+export const clientBet = createEvent<number>();
+export const clientReward = createEvent<number>();
+export const updateBalance = createEvent<number>();
 
-sample({
-    clock: updateBalance,
-    target: $balance
-})
+const user: any = localStorage.getItem("user");
+const parse = JSON.parse(user) || 0;
+export const $balance = createStore<number>(parse.balance || 0);
 
 sample({
-    clock: clientBet,
-    source: $balance,
-    fn: (balance, bet) => (balance - bet),
-    target: $balance
-})
+  clock: updateBalance,
+  target: $balance,
+});
 
 sample({
-    clock: clientReward,
-    source: $balance,
-    fn: (balance, reward) => (balance + reward),
-    target: $balance
-})
+  clock: clientBet,
+  source: $balance,
+  fn: (balance, bet) => balance - bet,
+  target: $balance,
+});
+
+sample({
+  clock: clientReward,
+  source: $balance,
+  fn: (balance, reward) => balance + reward,
+  target: $balance,
+});

@@ -34,7 +34,7 @@ const RegistrationPopup: FC<RegistrationPopupProps> = ({ password }) => {
             const res = await registration(userData)
             updateBalance(res.data.userData.balance)
             toggleRegistration(false)
-        } catch (e) {
+        } catch (e:any) {
             setError(e.response.data.message)
         }
     }

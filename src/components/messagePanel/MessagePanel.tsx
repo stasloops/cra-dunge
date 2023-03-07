@@ -10,7 +10,7 @@ const MessagePanel = () => {
     return (
         <div className='message'>
             {
-                errors?.map((item, id) => (
+                errors?.map((item: any, id: any) => (
                     <div key={id} className='message__container'>
                         <div onClick={() => deleteError(item.text)} className='message__delete icon__delete'>
                             <span className='icon__delete-x'>

@@ -21,7 +21,7 @@ const LoginPopup = () => {
       const res = await login(userData)
       updateBalance(res.data.userData.balance)
       toggleLogin(false)
-    } catch (e) {
+    } catch (e: any) {
       setError(e.response.data.message)
     }
   }

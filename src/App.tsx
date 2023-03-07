@@ -40,7 +40,8 @@ function App() {
   }, [])
 
   const checkPayStatus = async () => {
-    const parse = JSON.parse(localStorage.getItem('payment'))
+    const payment:any = localStorage.getItem('payment')
+    const parse = JSON.parse(payment)
     const billId = parse.billId
     const data = {
       billId: billId
