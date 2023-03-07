@@ -9,6 +9,7 @@ import './Header.scss'
 import { useSvg } from '../../../hooks/useSvg';
 import { User } from '../../../types/userTypes';
 import axios from 'axios';
+import GoogleAuthButton from '../../GoogleAuthButton';
 
 type HeaderProps = {
     setVisibleAside: (state: boolean) => void
@@ -75,6 +76,7 @@ const Header: FC<HeaderProps> = ({ setVisibleAside, setVisibleChat }) => {
                             null
                     }
                 </nav>
+                <GoogleAuthButton />
                 {
                     auth.isAuth ?
                         <div className='cont'>
