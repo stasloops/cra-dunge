@@ -1,0 +1,80 @@
+@import "../../../../style/color.scss";
+
+.ladder {
+    &__panel {
+        width: 100%;
+        max-width: 300px;
+        background-color: $blackTwo;
+        border-radius: 5px;
+        border-top: 2px solid $blue;
+
+        &-container {
+            padding: 0 20px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            max-width: 600px;
+            padding-bottom: 30px;
+        }
+
+        @media screen and (max-width: 800px) {
+            width: 80%;
+        }
+        
+        @media screen and (max-width: 450px) {
+           width: 90%;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    &__input {
+        border: 1px solid #424242;
+        border-radius: 5px;
+        background-color: $blackTwo;
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        color: rgb(198, 198, 198);
+        font-size: 18px;
+
+        &:focus-visible {
+            outline: 0;
+            border: 1px solid $green;
+        }
+
+        &:active {
+            border: 1px solid $green;
+        }
+
+        &:hover {
+            border: 1px solid $green;
+        }
+    }
+
+    &__button {
+        background: $blue;
+        color: #fff;
+        width: 100%;
+        padding: 18px 35px;
+        margin-top: 20px;
+        border: 1px solid $blue;
+        border-bottom: 4px solid $blueTwo;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            transition: 0.3s;
+            background: $blue;
+            transform: scale(0.98);
+            border: 1px solid $blue;
+            border-bottom: 4px solid $blue;
+        }
+    }
+}

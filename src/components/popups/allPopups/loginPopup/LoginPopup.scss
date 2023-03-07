@@ -1,0 +1,104 @@
+@import "../../../../style/color.scss";
+
+.login {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.596);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+
+    &__inner {
+        background: $black;
+        width: 500px;
+        height: 600px;
+        border-radius: 15px;
+        position: relative;
+    }
+
+    &__title {
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 0 8px hsl(0deg 0% 100% / 40%);
+    }
+
+    &__top {
+        border-bottom: 2px solid $greenTwo;
+        margin-bottom: 25px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 5px;
+        right: 30px;
+        color: #7b7e9a;
+        font-size: 34px;
+        cursor: pointer;
+        transform: rotate(45deg);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    &__input {
+        background-color: $black;
+        border: 1px solid rgb(77, 77, 77);
+        border-radius: 5px;
+        width: 100%;
+        padding: 13px 10px;
+        margin-bottom: 25px;
+        box-sizing: border-box;
+        color: #fff;
+
+        &:focus-visible {
+            outline: 0;
+            border: 1px solid $green;
+        }
+
+        &:active {
+            border: 1px solid $green;
+        }
+
+        &:hover {
+            border: 1px solid $green;
+        }
+    }
+
+    &__button {
+       background: linear-gradient(86.86deg, $greenTwo 20.19%, $green);
+       color: $black;
+       font-weight: 700;
+       font-size: 15px;
+       border: none;
+       border-radius: 8px;
+       padding: 20px 0;
+       width: 100%;
+       cursor: pointer;
+       margin-bottom: 15px;
+    }
+
+    &__error {
+        color: red;
+    }
+
+    &__create {
+        background: $black;
+        color: #fff;
+        border: 2px solid #82828275;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.168);
+    }
+}

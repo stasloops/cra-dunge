@@ -1,0 +1,23 @@
+@import "../../../../../style/color.scss";
+
+.little {
+    position: absolute;
+    right: -110px;
+    top: 30px;
+    background-color: $blackTwo;
+    border-radius: 5px;
+    &__inner {
+        
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        color: #fff;
+        padding: 10px 10px;
+        width: 120px;
+    }
+}
